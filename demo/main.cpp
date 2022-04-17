@@ -1,5 +1,7 @@
-#include <example.hpp>
+#include <builder.hpp>
 
-int main() {
-  example();
+int main(int argc, char** argv) {
+  builder b{};
+  log_setup::init();
+  return b.vmain(b.parse_console_args(argc, argv));
 }
